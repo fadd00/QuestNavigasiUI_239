@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.sample.prak6.view.TampilData
 
 enum class navigasi {
     Formulir,
@@ -16,8 +17,8 @@ enum class navigasi {
 
 @Composable
 fun DataApp(
-    navController: NavHostController = rememberNavController(),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController()
 ){
     Scaffold { isiRuang->
         NavHost(
@@ -34,7 +35,7 @@ fun DataApp(
             }
             composable(route = navigasi.Detail.name) {
                 TampilData(
-                    onBackBtnClick = {
+                    OnBackBtnClick = {
                         cancelAndBackToFormulir(navController)
                     }
                 )

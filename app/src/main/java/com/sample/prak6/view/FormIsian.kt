@@ -5,8 +5,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormIsian(
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
@@ -21,7 +25,7 @@ fun FormIsian(
                 colors = TopAppBarDefaults
                     .topAppBarColors(containerColor = colorResource(id = R.color.teal_700))
             )
-}){
+        }){
             isiRuang ->
         Column(
             modifier = Modifier.padding(paddingValues = isiRuang),
@@ -79,7 +83,7 @@ fun FormIsian(
             ) {
                 Text(text = stringResource(id = R.string.submit))
             }
-
         }
     }
+}
 

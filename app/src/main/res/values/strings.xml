@@ -3,7 +3,7 @@
     <string name="submit">Submit</string>
     <string name="back">back</string>
     <string name="nama_lengkap">nama lengkap</string>
-    <string name="jenis-kelamin">jenis kelamin</string>
+    <string name="jenis_kelamin">jenis kelamin</string>
     <string name="alamat">alamat</string>
     <string name="tampil">tampilkan data</string>
     <string name="home">form isian</string>
