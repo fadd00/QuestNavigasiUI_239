@@ -23,4 +23,15 @@ fun TampilData(
                     containerColor = colorResource(id = R.color.teal_700)
                 )
             )
+        }) { isiRuang ->
+        Column(
+            modifier = Modifier.padding(paddingValues = isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween
+        )
+        {
+            Column(
+                modifier = Modifier.padding(all = dimensionResource(id = R.dimen.padding_medium)),
+                verticalArrangement = Arrangement.spacedBy(
+                    space = dimensionResource(id = R.dimen.padding_small)
+                )
 }
