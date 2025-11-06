@@ -27,11 +27,7 @@ fun DataApp(
             modifier = modifier.padding(isiRuang)
         ) {
             composable(route = navigasi.Formulir.name) {
-                FormIsian(
-                    OnSubmitBtnClick = {
-                        navController.navigate(navigasi.Detail.name)
-                    }
-                )
+                FormDataDiri()
             }
             composable(route = navigasi.Detail.name) {
                 TampilData(
