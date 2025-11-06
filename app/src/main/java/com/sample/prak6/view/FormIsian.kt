@@ -15,7 +15,10 @@ import com.sample.prak6.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormDataDiri(modifier: Modifier = Modifier) {
+fun FormDataDiri(
+    onSubmitClick: () -> Unit = {},
+    modifier: Modifier = Modifier
+) {
     var textNama by remember { mutableStateOf(value = "") }
     var textAlamat by remember { mutableStateOf(value = "") }
     var textJK by remember { mutableStateOf(value = "") }
@@ -159,6 +162,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 enabled = textAlamat.isNotEmpty() && textSP.isNotEmpty(),
                 onClick = {
                     nama = textNama
+                    onSubmitClick()
                     jenis = textJK
                     alamat = textAlamat
                     status = textSP

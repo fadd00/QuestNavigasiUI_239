@@ -89,20 +89,7 @@ fun HomePage(
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
                 )
-            }
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            OutlinedButton(
-                onClick = { /* Info or Help action */ },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp)
-            ) {
-                Text(
-                    text = "Informasi Lebih Lanjut",
-                    fontSize = 16.sp
-                )
             }
         }
     }

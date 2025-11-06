@@ -37,12 +37,21 @@ fun DataApp(
                 )
             }
             composable(route = navigasi.Formulir.name) {
-                FormDataDiri()
+                FormDataDiri(
+                    onSubmitClick = {
+                        navController.navigate(navigasi.Detail.name)
+                    }
+                )
             }
             composable(route = navigasi.Detail.name) {
                 TampilData(
                     OnBackBtnClick = {
                         cancelAndBackToFormulir(navController)
+                    },
+                    onBackToHomeClick = {
+                        navController.navigate(navigasi.Home.name) {
+                            popUpTo(navigasi.Home.name) { inclusive = true }
+                        }
                     }
                 )
             }

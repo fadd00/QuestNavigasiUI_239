@@ -17,7 +17,9 @@ import com.sample.prak6.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    OnBackBtnClick: () -> Unit){
+    OnBackBtnClick: () -> Unit,
+    onBackToHomeClick: () -> Unit = {}
+){
     val items = listOf(
         Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
         Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
@@ -63,12 +65,19 @@ fun TampilData(
                         HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
                     }
                 }
-                Spacer(modifier = Modifier.height(height = 10.dp))
+                Spacer(modifier = Modifier.height(height = 20.dp))
                 Button(
                     modifier = Modifier.fillMaxWidth(),
                     onClick = OnBackBtnClick
                 ) {
-                    Text(text = stringResource(id = R.string.back))
+                    Text(text = "Kembali")
+                }
+                Spacer(modifier = Modifier.height(height = 10.dp))
+                OutlinedButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackToHomeClick
+                ) {
+                    Text(text = "Home")
                 }
             }
         }
