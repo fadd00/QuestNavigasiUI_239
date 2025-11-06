@@ -9,8 +9,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.sample.prak6.view.TampilData
+import com.sample.prak6.view.HomePage
+import com.sample.prak6.FormDataDiri
 
 enum class navigasi {
+    Home,
     Formulir,
     Detail
 }
@@ -23,9 +26,16 @@ fun DataApp(
     Scaffold { isiRuang->
         NavHost(
             navController = navController,
-            startDestination = navigasi.Formulir.name,
+            startDestination = navigasi.Home.name,
             modifier = modifier.padding(isiRuang)
         ) {
+            composable(route = navigasi.Home.name) {
+                HomePage(
+                    onNavigateToForm = {
+                        navController.navigate(navigasi.Formulir.name)
+                    }
+                )
+            }
             composable(route = navigasi.Formulir.name) {
                 FormDataDiri()
             }
@@ -44,3 +54,4 @@ private fun cancelAndBackToFormulir(
 ){
     navController.popBackStack(navigasi.Formulir.name, inclusive = false)
 }
+
