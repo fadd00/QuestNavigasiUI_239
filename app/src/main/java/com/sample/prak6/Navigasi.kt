@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.sample.prak6.view.TampilData
 import com.sample.prak6.view.HomePage
-import com.sample.prak6.FormDataDiri
+import com.sample.prak6.view.FormDataDiri
 
 enum class navigasi {
     Home,
@@ -37,11 +37,7 @@ fun DataApp(
                 )
             }
             composable(route = navigasi.Formulir.name) {
-                FormDataDiri(
-                    onSubmitClick = {
-                        navController.navigate(navigasi.Detail.name)
-                    }
-                )
+                FormDataDiri()
             }
             composable(route = navigasi.Detail.name) {
                 TampilData(
